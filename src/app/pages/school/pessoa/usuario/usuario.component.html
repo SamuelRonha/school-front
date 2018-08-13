@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="username">Login</label>
+      <input [(ngModel)]="usuario.username" name="username" type="text" class="form-control" id="username"
+             placeholder="Login">
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="senha">Senha</label>
+      <input [(ngModel)]="usuario.senha" name="senha" type="password" class="form-control" id="senha"
+             placeholder="Senha">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="form-group">
+      <label>Tipo de Acesso</label>
+      <select [(ngModel)]="usuario.acesso" class="form-control">
+        <option selected [value]="'BASICO'" value="BASICO">Básico</option>
+        <option [value]="'ADMIN'" value="ADMIN">Administrativo</option>
+        <option [value]="'GERENTE'" value="GERENTE">Gerente</option>
+        <option [value]="'EMPREGADO'" value="EMPREGADO">Empregado</option>
+        <option [value]="'PROFESSOR'" value="PROFESSOR">Professor</option>
+        <option [value]="'PARENTE'" value="PARENTE">Parente</option>
+        <option [value]="'ALUNO'" value="ALUNO">Aluno</option>
+      </select>
+    </div>
+  </div>
+</div>

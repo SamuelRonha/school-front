@@ -1,0 +1,14 @@
+<app-funcionario
+  [funcionario]="professor.funcionario"
+  [tabela]="false"
+></app-funcionario>
+<app-base-list [bases]="professor.materias" [name]="'materia'" [titulo]="'Matérias'" [type]="'materia'"></app-base-list>
+
+<app-table
+  [pojo]="professor"
+  [titles]="['Identificador','Nome', 'CPF', 'Email','Usuário']"
+  [name]="'professor'"
+  [columns]="['id','funcionario.pessoa.nome', 'funcionario.pessoa.cpf', 'funcionario.pessoa.email','funcionario.pessoa.usuario.username']"
+></app-table>
+
+

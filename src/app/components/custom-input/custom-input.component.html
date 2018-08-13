@@ -1,0 +1,19 @@
+<div *ngFor="let f of forms">
+  <p>{{f}}</p>
+  <div *ngFor="let t of f.types">
+    <p>{{t.type}}</p>
+    <div ngClass="{{t.mClass}}" *ngIf="t.type == 'input' ">
+      <input ngClass="{{t.classes}}"
+             type="{{t.type}}"
+             placeholder="{{t.placeholder}}"
+             height="{{t.height}}"
+             width="{{t.width}}">
+    </div>
+    <!--<div *ngIf="t.type == 'textarea'">-->
+      <!--<textarea ngClass="{{t.classes}}"-->
+                <!--type="{{t.type}}"-->
+                <!--placeholder="{{t.placeholder}}">-->
+      <!--</textarea>-->
+    <!--</div>-->
+  </div>
+</div>

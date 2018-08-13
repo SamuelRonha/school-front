@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="req-id">Identificador</label>
+      <input [(ngModel)]="requisicao.id" name="id" type="number" class="form-control" id="req-id"
+             placeholder="Identificador" disabled>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="req-nome">Nome</label>
+      <input [(ngModel)]="requisicao.nome" name="nome" type="text" class="form-control" id="req-nome"
+             placeholder="Nome">
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="req-descricao">Descrição</label>
+      <textarea [(ngModel)]="requisicao.descricao" name="descricao" type="text" class="form-control"
+                id="req-descricao"
+                placeholder="Descrição objetiva..."></textarea>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group">
+      <ba-card cardTitle="Arquivo anexo" baCardClass="with-scroll">
+        <ba-file-uploader [fileUploaderOptions]="fileUploaderOptions"></ba-file-uploader>
+      </ba-card>
+    </div>
+  </div>
+</div>
+
+<app-custom-combo
+  [base]="requisicao.aluno"
+  [nome]="requisicao.aluno.nome"
+  [searchField]="'nome'"
+  [cnome]="'Aluno'"
+  [inome]="'aluno'"
+  [hasAdd]="true"
+></app-custom-combo>
+
+
+<app-table
+  [pojo]="requisicao"
+  [titles]="['Identificador', 'Nome','Valor', 'Tipo de Acesso']"
+  [name]="'funcao'"
+  [columns]="['id','nome', 'valor', 'tempo']"
+></app-table>

@@ -1,0 +1,85 @@
+<div class="float-right">
+  <button type="reset" class="btn btn-danger" (click)="clear(pojo)">Cancelar</button>
+</div>
+<button type="submit" class="btn btn-primary" (click)="save(name,pojo)">Salvar</button>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="container-fluid">
+  <div class='row-fluid'>
+    <table class="table table-striped">
+      <!--<caption *ngIf="title">{{ title }}</caption>-->
+      <thead class="thead-inverse">
+      <tr #headerComponent>
+        <th scope="row" *ngFor="let l of titles; let t = index">
+          <a (click)="sort(t)">{{l}}</a>
+        </th>
+        <th scope="row">
+          Ação
+        </th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let i of names; let s = index">
+        <td *ngFor="let a of columns">
+          {{ i[a] }}
+        </td>
+        <td>
+          <i class="btn fa fa-search" value="consultar" (click)="consulta(item[s])"></i>
+          <i class="btn fa fa-trash" value="excluir" (click)="excluir(item[s])"></i>
+        </td>
+      </tr>
+
+
+      </tbody>
+    </table>
+  </div>
+  <ul class="pagination justify-content-center" #pagesComponent>
+    <li class="page-item">
+      <a class="page-link" (click)="handleBack()" id="page0">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="page-item {{p == 1 ? 'active' : ''}}" *ngFor="let p of pages">
+      <a class="page-link " id="page{{p}}" (click)="getItems(p-1)">{{p}}</a>
+    </li>
+    <li class="page-item" (click)="handleForward()">
+      <a class="page-link" aria-label="Next" id="page{{pages[pages.length]}}">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div class="modal fade" id="error-modal">
+  <div class="modal-dialog modal-confirm">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header" style="padding-left: 43%;">
+        <div class="icon-box ">
+          <i class="fa fa-close"></i>
+        </div>
+        <!--<h4 class="modal-title">Problemas</h4>-->
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+        <!--<button type="button" class="close" (click)="close('error-modal')">&times;</button>-->
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body text-center">
+        <h4>Ooops!</h4>
+        <div *ngFor="let l of errors;">
+          <p class="p-2">O campo {{l['propriedade']}} {{l['erro']}}</p>
+        </div>
+        <button class="btn btn-success" data-dismiss="modal">Voltar</button>
+      </div>
+      <!-- Modal footer -->
+    </div>
+  </div>
+</div>
+
+
+
+

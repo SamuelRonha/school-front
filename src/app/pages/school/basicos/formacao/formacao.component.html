@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="instituicao">Nome</label>
+      <input [(ngModel)]="formacao.instituicao" name="instituicao" type="text" class="form-control" id="instituicao"
+             placeholder="Instituição">
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="nivel">Nome</label>
+      <input [(ngModel)]="formacao.nivel" name="instituicao" type="text" class="form-control" id="nivel"
+             placeholder="Nivel">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="descricao">Descrição</label>
+      <textarea [(ngModel)]="formacao.descricao" name="descricao" type="text" class="form-control" id="descricao"
+                placeholder="Descrição da formação..."></textarea>
+    </div>
+  </div>
+</div>
+<app-table
+  [pojo]="formacao"
+  [titles]="['Identificador', 'Instituição','Nivel']"
+  [name]="'formacao'"
+  [columns]="['id', 'instituicao', 'nivel']"
+></app-table>

@@ -1,0 +1,23 @@
+<script type="application/javascript" src="/node_modules/jquery/dist/jquery.js"></script>
+<script type="application/javascript" src="/node_modules/owl.carousel/dist/owl.carousel.js"></script>
+<owl-carousel
+  [options]="{
+        loop: true,
+        dots: true,
+        nav: true,
+        margin: 10,
+        responsiveClass: true,
+        center: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        items: 1,
+        responsiveRefreshRate: 100
+}"
+  [items]="images"
+  [carouselClasses]="['owl-theme', 'row', 'sliding']">
+  <div class="item"><img src="../../../assets/img/01.jpg"/></div>
+  <div class="item"><img src="../../../assets/img/02.jpg"/></div>
+  <div class="item"><img src="../../../assets/img/04.jpg"/></div>
+  <div class="item"><img src="../../../assets/img/05.jpg"/></div>
+</owl-carousel>

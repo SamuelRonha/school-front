@@ -1,0 +1,31 @@
+<div class="row">
+  <ba-card cardTitle="Endereços" baCardClass="with-scroll" class="smart-table-container">
+    <ng2-smart-table [settings]="settings" [source]="source"
+                     (deleteConfirm)="onDeleteConfirm($event)"
+                     (createConfirm)="onCreateConfirm($event)"
+                     (editConfirm)="onEditConfirm($event)"
+    ></ng2-smart-table>
+  </ba-card>
+</div>
+<style>
+  #completer {
+    background-color: blue;
+  }
+</style>
+
+<!--<div class="modal fade" id="cidade">-->
+  <!--<div class="modal-dialog modal-lg">-->
+    <!--<div class="modal-content">-->
+      <!--&lt;!&ndash; Modal Header &ndash;&gt;-->
+      <!--<div class="modal-header text-center">-->
+        <!--<h4 class="modal-title">Cidade</h4>-->
+        <!--<button type="button" class="close" (click)="close('cidade')">&times;</button>-->
+      <!--</div>-->
+      <!--&lt;!&ndash; Modal body &ndash;&gt;-->
+      <!--<div class="modal-body">-->
+        <!--<app-cidade></app-cidade>-->
+      <!--</div>-->
+      <!--&lt;!&ndash; Modal footer &ndash;&gt;-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->

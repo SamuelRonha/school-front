@@ -1,0 +1,91 @@
+<div class="row">
+  <div class="col-sm-8">
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input [(ngModel)]="turma.nome" name="nome" type="text" class="form-control" id="nome"
+             placeholder="1ª Serie B">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4" hidden>
+      <div class="form-group">
+        <label for="id-ano">Identificador</label>
+        <input [(ngModel)]="turma.anoLetivo.id" name="ano" type="number"
+               class="form-control" id="id-ano" disabled
+               placeholder="Identificador" [required]="true"
+               minlength="3">
+      </div>
+    </div>
+    <div class="col-sm-12 form-group">
+      <app-custom-combo
+        [base]="turma.anoLetivo"
+        [nome]="turma.anoLetivo.nome"
+        [searchField]="'nome'"
+        [cnome]="'Ano Letivo'"
+        [inome]="'anoletivo'"
+        [hasAdd]="true"
+      ></app-custom-combo>
+    </div>
+  </div>
+
+
+  <!--<div class="col-sm-4">-->
+  <!--<div class="form-group">-->
+  <!--<label for="ano">Ano</label>-->
+  <!--<input [(ngModel)]="turma.ano" name="ano" type="number" class="form-control" id="ano"-->
+  <!--placeholder="2019">-->
+  <!--</div>-->
+  <!--</div>-->
+</div>
+<app-custom-combo
+  [base]="turma.sala"
+  [nome]="turma.sala.numero"
+  [searchField]="'nome'"
+  [cnome]="'Sala'"
+  [inome]="'sala'"
+  [hasAdd]="true"
+></app-custom-combo>
+<app-base-list [bases]="turma.alunos" [name]="'aluno'" [titulo]="'Alunos'" [type]="'aluno'"></app-base-list>
+<app-hora-aula id="horaAulas-id" [horaAulas]="turma.horaAulas"></app-hora-aula>
+
+<app-table
+  [pojo]="turma"
+  [titles]="['Identificador', 'Nome','Ano']"
+  [name]="'turma'"
+  [columns]="['id','nome', 'ano']"
+></app-table>
+
+
+<div class="modal fade" id="anoletivo">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header text-center">
+        <h4 class="modal-title">Ano letivo</h4>
+        <button type="button" class="close" (click)="close('anoletivo')">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <app-ano-letivo></app-ano-letivo>
+      </div>
+      <!-- Modal footer -->
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="sala">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header text-center">
+        <h4 class="modal-title">Sala</h4>
+        <button type="button" class="close" (click)="close('sala')">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <app-sala></app-sala>
+      </div>
+      <!-- Modal footer -->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<!--<form #form="ngForm">-->
+  <!--<div class="form-group" *ngFor="let i of items; let s = index">-->
+    <!--<label for="{{items[s]}}">{{titles[s]}}</label>-->
+    <!--<div *ngIf="types[s] !== 'selector'">-->
+      <!--<input [(ngModel)]="pojo[items[s]]" name="{{items[s]}}" type="{{types[s]}}"-->
+             <!--class="form-control" id="{{items[s]}}"-->
+             <!--placeholder="{{titles[s]}}" #name="ngModel" [required]="required[s] >= 1 ? true : false"-->
+             <!--minlength="{{required[s]}}">-->
+    <!--</div>-->
+
+    <!--<div *ngIf="types[s] === 'selector'" class="input-group">-->
+
+      <!--<app-custom-combo-->
+      <!--[title]="titles[s]"-->
+      <!--[labels]='child'-->
+      <!--[name]="items[s]"-->
+      <!--[vars]='child'-->
+      <!--[pojo]="pojo[items[s]]"-->
+      <!--&gt;</app-custom-combo>-->
+
+      <!--&lt;!&ndash;<input type="number" class="form-control" name="{{items[s]+child[0]}}" [(ngModel)]="pojo[items[s]][child[0]]"&ndash;&gt;-->
+      <!--&lt;!&ndash;[required]="required[s] >= 1 ? true : false" #name="ngModel">&ndash;&gt;-->
+      <!--&lt;!&ndash;<input [(ngModel)]="pojo[items[s]][child[1]]" name="{{items[s]+child[1]}}"&ndash;&gt;-->
+      <!--&lt;!&ndash;class="form-control" id="{{items[s]+child[1]}}" disabled>&ndash;&gt;-->
+
+    <!--</div>-->
+    <!--<div *ngIf="(name.errors ? name.errors.required : false) && (name.dirty || name.touched)"-->
+         <!--class="alert alert-danger">-->
+      <!--<label>{{items[s]}} é de preenchimento obrigatório</label>-->
+    <!--</div>-->
+    <!--<div *ngIf="(name.errors ? name.errors.minlength : false)"-->
+         <!--class="alert alert-danger">-->
+      <!--<label>{{items[s]}} é precisa ter no minimo {{required[s]}} caractéres</label>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<button [disabled]="name.errors?.required" type="submit" class="btn btn-primary" (click)="put()">Salvar</button>-->
+  <!--<button type="reset" class="btn btn-danger">Cancelar</button>-->
+<!--</form>-->
+<!--<br/>-->
+
+<!--&lt;!&ndash;<app-table&ndash;&gt;-->
+  <!--&lt;!&ndash;[title]="title"&ndash;&gt;-->
+  <!--&lt;!&ndash;[labels]='ttitles'&ndash;&gt;-->
+  <!--&lt;!&ndash;[name]="name"&ndash;&gt;-->
+  <!--&lt;!&ndash;[vars]='titens'&ndash;&gt;-->
+  <!--&lt;!&ndash;[pojo]="pojo"&ndash;&gt;-->
+<!--&lt;!&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;</app-table>&ndash;&gt;-->

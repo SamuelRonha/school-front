@@ -1,0 +1,64 @@
+<form #form="ngForm" class="col-md-15">
+  <!--<div class="row col-md-14">-->
+    <!--<div class="col-md-3">-->
+      <!--<ba-card cardTitle="Picture Uploader" baCardClass="with-scroll">-->
+        <!--<ba-picture-uploader [picture]="pessoa.foto" [defaultPicture]="pessoa.foto"-->
+                             <!--[uploaderOptions]="uploaderOptions"></ba-picture-uploader>-->
+      <!--</ba-card>-->
+    <!--</div>-->
+    <div class="col-md-14">
+      <div class="col-md-14">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label for="id-pessoa">Identificador</label>
+              <input [(ngModel)]="pessoa.id" name="nome" type="number"
+                     class="form-control" id="id-pessoa" disabled
+                     placeholder="Identificador" [required]="true"
+                     minlength="3">
+            </div>
+          </div>
+          <div class="col-sm-8 form-group">
+            <app-custom-combo
+              [base]="pessoa"
+              [nome]="pessoa.nome"
+              [searchField]="'nome'"
+              [cnome]="'Nome'"
+              [inome]="'pessoa'"
+              [hasAdd]="false"
+              [classInput]="'col-sm-12'"
+            ></app-custom-combo>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="cpf">CPF</label>
+              <input [(ngModel)]="pessoa.cpf" name="cpf" type="text" class="form-control" id="cpf" placeholder="CPF">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input [(ngModel)]="pessoa.email" name="email" type="text" class="form-control" id="email"
+                     placeholder="joao@email.com">
+            </div>
+          </div>
+        </div>
+        <app-usuario [usuario]="pessoa.usuario"></app-usuario>
+      </div>
+    </div>
+    <!--<div class="col-sm-10">-->
+    <!--<div class="form-group">-->
+    <!--<label for="nome-pessoa">Nome</label>-->
+    <!--<input [(ngModel)]="pessoa.nome" name="nome" type="text"-->
+    <!--class="form-control" id="nome-pessoa"-->
+    <!--placeholder="Nome Completo" [required]="true"-->
+    <!--minlength="3">-->
+    <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+
+  <app-endereco [enderecos]="pessoa.enderecos"></app-endereco>
+  <app-telefone [telefones]="pessoa.telefones"></app-telefone>
+</form>

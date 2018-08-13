@@ -1,0 +1,26 @@
+<div class="row">
+  <ba-card cardTitle="Formações" baCardClass="with-scroll" class="smart-table-container">
+    <ng2-smart-table [settings]="settings" [source]="source"
+                     (deleteConfirm)="onDeleteConfirm($event)"
+                     (createConfirm)="onCreateConfirm($event)"
+                     (editConfirm)="onEditConfirm($event)"
+    ></ng2-smart-table>
+  </ba-card>
+</div>
+
+<div class="modal fade" id="formacao">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header text-center">
+        <h4 class="modal-title">Formacao</h4>
+        <button type="button" class="close" (click)="close('formacao')">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <app-formacao></app-formacao>
+      </div>
+      <!-- Modal footer -->
+    </div>
+  </div>
+</div>

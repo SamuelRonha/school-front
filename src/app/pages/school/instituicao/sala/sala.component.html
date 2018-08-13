@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="numero">Número</label>
+      <input [(ngModel)]="sala.numero" name="numero" type="text" class="form-control" id="numero"
+             placeholder="A10">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="andar">Andar</label>
+      <input [(ngModel)]="sala.andar" name="andar" type="number" class="form-control" id="andar"
+             placeholder="12">
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="cadeiras">Cadeiras</label>
+      <input [(ngModel)]="sala.cadeiras" name="cadeiras" type="number" class="form-control" id="cadeiras"
+             placeholder="52">
+    </div>
+  </div>
+</div>
+<app-table
+  [pojo]="sala"
+  [titles]="['Identificador', 'Número','Andar', 'Cadeiras']"
+  [name]="'sala'"
+  [columns]="['id','numero', 'andar', 'cadeiras']"
+></app-table>

@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="id">Identificador</label>
+      <input [(ngModel)]="funcao.id" name="id" type="number" class="form-control" id="id"
+             placeholder="Identificador" disabled>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input [(ngModel)]="funcao.nome" name="nome" type="text" class="form-control" id="nome"
+             placeholder="Nome">
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label>Periodo de Pagamento</label>
+      <select [(ngModel)]="funcao.tempo" class="form-control">
+        <option [value]="'HORA'" value="HORA">Hora</option>
+        <option [value]="'DIA'" value="DIA">Diaria</option>
+        <option [value]="'MENSAL'" value="MENSAL" selected>Mensal</option>
+        <option [value]="'ANUAL'" value="ANUAL">Anual</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="valor">Valor</label>
+      <input [(ngModel)]="funcao.valor" name="valor" type="number" class="form-control" id="valor"
+             placeholder="Valor">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="descricao">Descrição</label>
+      <textarea [(ngModel)]="funcao.descricao" name="descricao" type="text" class="form-control" id="descricao"
+                placeholder="Descrição do cargo..."></textarea>
+    </div>
+  </div>
+</div>
+<app-table
+  [pojo]="funcao"
+  [titles]="['Identificador', 'Nome','Valor', 'Tipo de Acesso']"
+  [name]="'funcao'"
+  [columns]="['id','nome', 'valor', 'tempo']"
+></app-table>

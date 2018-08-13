@@ -1,0 +1,13 @@
+<app-custom-combo
+  #completerGrid
+  [base]="cell.newValue == '' ? base : cell.newValue"
+  [nome]="cell.newValue && cell.newValue.nome ? cell.newValue.nome : ''"
+  [searchField]="'nome'"
+  [cnome]="'Separador'"
+  [inome]="'separador'"
+  [grid]="true"
+  [more]="more"
+></app-custom-combo>
+
+
+<!--todo se for de timo true em alguma propriedade, seta que o appcombo é livre das classes row, col-sm-6 e náo possui label-->

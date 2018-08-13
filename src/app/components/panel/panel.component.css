@@ -1,0 +1,86 @@
+#nav-panel {
+  width: 20%;
+  float: left;
+  /*width: 0; !* 0 width - change this with JavaScript *!*/
+  /*height: 200% !important;*/
+  position: absolute; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  background-color: #222; /* Black*/
+  border-color: #0f0f0f;
+  transition: 0.5s;
+}
+
+.navbar-inverse {
+  margin-bottom: 0%;
+  border-radius: 0;
+}
+
+.nav {
+  z-index: 1000;
+  height: 100%;
+
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.navbar-inverse {
+  background-color: transparent;
+}
+
+.arrow:before {
+  font-family: FontAwesome;
+  content: "\f078";
+  display: inline-block;
+  padding-left: 5%;
+  padding-right: 5%;
+  vertical-align: middle;
+  float: right;
+}
+
+.li-top {
+  position: inherit;
+  display: inline;
+}
+
+.li-mid h3 {
+  padding-top: 2%;
+  color: antiquewhite;
+  word-break: break-all;
+  font-size: 1.7vw;
+}
+
+.circle {
+  padding: 25% 25% 25% 25%;
+  margin-left: 25%;
+  /*display: inherit;*/
+  /*background-image: url("../../../assets/img/Megalo_Portrait.png");*/
+  background-size: 100%;
+  width: 20%;
+  /*min-height: 100%;*/
+  border: solid;
+  /*border-color: -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from(#00abeb), to(#fff), color-stop(0.5, #fff), color-stop(0.5, #66cc00)) 21 30 30 21 repeat repeat;*/
+  border-radius: 50%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+ul ul li a {
+  display: block;
+  padding: 3% 5%;
+  background-color: rgba(43, 51, 50, 0.77);
+  text-decoration: none !important;
+}
+
+/* Change the link color on hover */
+li a:hover {
+  background-color: #555 !important;
+  color: white;
+}
+

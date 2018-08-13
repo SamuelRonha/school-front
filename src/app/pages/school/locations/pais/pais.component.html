@@ -1,0 +1,35 @@
+<form>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="id">Identificador</label>
+        <input [(ngModel)]="pais.id" name="id" type="number" class="form-control" id="id"
+               placeholder="Identificador" disabled>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group ">
+        <label for="nome">Nome</label>
+        <input [(ngModel)]="pais.nome" name="nome" type="text" class="form-control" id="nome"
+               placeholder="Nome">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="codigo">Código</label>
+        <input [(ngModel)]="pais.codigo" name="codigo" type="number" class="form-control" id="codigo"
+               placeholder="Código">
+      </div>
+    </div>
+  </div>
+</form>
+
+<app-table
+  [pojo]="pais"
+  [titles]="['Identificador','Nome', 'Código']"
+  [name]="'pais'"
+  [columns]="['id','nome','codigo']"
+></app-table>
+

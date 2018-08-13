@@ -1,0 +1,11 @@
+<div class="row">
+  <ba-card cardTitle="Telefones" baCardClass="with-scroll" class="smart-table-container">
+    <ng2-smart-table [settings]="settings" [source]="source"
+                     (deleteConfirm)="onDeleteConfirm($event)"
+                     (createConfirm)="onCreateConfirm($event)"
+    ></ng2-smart-table>
+  <!--todo criar componente para acoplar estes ba card e ng2 table-->
+  </ba-card>
+</div>
+
+

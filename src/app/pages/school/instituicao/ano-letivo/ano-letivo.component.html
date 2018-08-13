@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-sm-8">
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input [(ngModel)]="anoLetivo.nome" name="nome" type="text" class="form-control" id="nome"
+             placeholder="Primeiro ano">
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="ano">Ano</label>
+      <input [(ngModel)]="anoLetivo.ano" disabled name="ano" type="number" class="form-control" id="ano"
+             placeholder="2019">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="inicio">Inicio</label>
+      <input [(ngModel)]="anoLetivo.inicio" name="inicio" type="date" class="form-control" id="inicio">
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="fim">Fim</label>
+      <input [(ngModel)]="anoLetivo.fim" name="fim" type="date" class="form-control" id="fim">
+    </div>
+  </div>
+</div>
+<app-separador [separadors]="anoLetivo.separadors"></app-separador>
+
+<app-table
+  [pojo]="anoLetivo"
+  [titles]="['Identificador', 'Nome','Inicio', 'Fim']"
+  [name]="'anoletivo'"
+  [columns]="['id','nome', 'inicio', 'fim']"
+></app-table>

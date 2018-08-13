@@ -1,0 +1,14 @@
+<div class="row">
+  <ba-card cardTitle="Hora Aula" baCardClass="with-scroll" class="smart-table-container">
+    <ng2-smart-table [settings]="settings" [source]="source"
+                     (deleteConfirm)="onDeleteConfirm($event)"
+                     (createConfirm)="onCreateConfirm($event)"
+                     (editConfirm)="onEditConfirm($event)"
+    ></ng2-smart-table>
+  </ba-card>
+</div>
+<style>
+  #completer {
+    background-color: blue;
+  }
+</style>

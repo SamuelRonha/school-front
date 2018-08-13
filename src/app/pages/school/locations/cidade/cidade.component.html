@@ -1,0 +1,58 @@
+<form>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="id-cidade">Identificador</label>
+        <input [(ngModel)]="cidade.id" name="id" type="number" class="form-control" id="id-cidade"
+               placeholder="Identificador" disabled>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group ">
+        <label for="nome-cidade">Nome</label>
+        <input [(ngModel)]="cidade.nome" name="nome" type="text" class="form-control" id="nome-cidade"
+               placeholder="Nome">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="codigo-cidade">Código</label>
+        <input [(ngModel)]="cidade.codigo" name="codigo" type="number" class="form-control" id="codigo-cidade"
+               placeholder="Código">
+      </div>
+    </div>
+  </div>
+</form>
+<app-custom-combo
+  [base]="cidade.estado"
+  [nome]="cidade.estado.nome"
+  [searchField]="'estado.nome'"
+  [cnome]="'Estado'"
+  [inome]="'estado'"
+></app-custom-combo>
+
+<app-table
+  [pojo]="cidade"
+  [titles]="['Identificador','Nome', 'Estado', 'País','Código']"
+  [name]="'cidade'"
+  [columns]="['id','nome', 'estado.nome', 'estado.pais.nome','codigo']"
+></app-table>
+
+<div class="modal fade" id="estado">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header text-center">
+        <h4 class="modal-title">Estado</h4>
+        <button type="button" class="close" (click)="close('estado')">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <app-estado></app-estado>
+      </div>
+      <!-- Modal footer -->
+    </div>
+  </div>
+</div>

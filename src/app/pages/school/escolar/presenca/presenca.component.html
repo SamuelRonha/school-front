@@ -1,0 +1,42 @@
+<div class="row">
+  <input id="turma" type="hidden" disabled [(ngModel)]="presenca.turma.id">
+  <div class="col-sm-8 form-group">
+    <app-custom-combo
+      [base]="presenca.turma"
+      [nome]="presenca.turma.nome"
+      [searchField]="'nome'"
+      [cnome]="'Turma'"
+      [inome]="'turma'"
+      [classInput]="'col-sm-12'"
+    ></app-custom-combo>
+  </div>
+
+  <div class="col-sm-4 form-group">
+    <app-custom-combo
+      [base]="presenca.aula"
+      [nome]="presenca.aula.nome"
+      [searchField]="'nome'"
+      [cnome]="'Aula'"
+      [inome]="'aula'"
+      [classInput]="'col-sm-12'"
+    ></app-custom-combo>
+  </div>
+</div>
+
+<!--<app-custom-combo-->
+<!--[base]="presenca.turma"-->
+<!--[nome]="presenca.turma.nome"-->
+<!--[searchField]="'nome'"-->
+<!--[cnome]="'Turma'"-->
+<!--[inome]="'turma'"-->
+<!--&gt;</app-custom-combo>-->
+
+
+<app-base-list [ad]="" [bases]="presenca.alunos" [name]="'aluno'" [titulo]="'Alunos'" [type]="'aluno'"></app-base-list>
+
+<app-table
+  [pojo]="presenca"
+  [titles]="['Identificador', 'Aula','Turma']"
+  [name]="'presenca'"
+  [columns]="['id','aula.nome', 'turma.nome']"
+></app-table>

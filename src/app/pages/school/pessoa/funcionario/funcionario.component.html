@@ -1,0 +1,36 @@
+<app-pessoa
+  [pessoa]="funcionario.pessoa"
+></app-pessoa>
+
+<!--<app-funcao-list [funcaos]="funcionario.funcaos"></app-funcao-list>-->
+
+<div *ngIf="tabela === true">
+  <app-table
+    [pojo]="funcionario"
+    [titles]="['Identificador','Nome', 'CPF', 'Email','Usuário']"
+    [name]="'funcionario'"
+    [columns]="['id','pessoa.nome', 'pessoa.cpf', 'pessoa.email','pessoa.usuario.username']"
+  ></app-table>
+</div>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="id-pessoa">Identificador</label>
+      <input [(ngModel)]="funcionario.funcao.id" name="nome" type="number"
+             class="form-control" id="id-pessoa" disabled
+             placeholder="Identificador" [required]="true"
+             minlength="3">
+    </div>
+  </div>
+  <div class="col-sm-8 form-group">
+    <app-custom-combo
+      [base]="funcionario.funcao"
+      [nome]="funcionario.funcao.nome"
+      [searchField]="'nome'"
+      [cnome]="'Nome'"
+      [inome]="'funcao'"
+      [hasAdd]="false"
+      [classInput]="'col-sm-12'"
+    ></app-custom-combo>
+  </div>
+</div>

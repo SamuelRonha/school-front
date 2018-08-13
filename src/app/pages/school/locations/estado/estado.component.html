@@ -1,0 +1,66 @@
+<form>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="id-estado">Identificador</label>
+        <input [(ngModel)]="estado.id" name="id" type="number" class="form-control" id="id-estado"
+               placeholder="Identificador" disabled>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group ">
+        <label for="nome-estado">Nome</label>
+        <input [(ngModel)]="estado.nome" name="nome" type="text" class="form-control" id="nome-estado"
+               placeholder="Nome">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="sigla-estado">Sigla</label>
+        <input [(ngModel)]="estado.sigla" name="sigla" type="text" class="form-control" id="sigla-estado"
+               placeholder="Sigla">
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="codigo-estado">Código</label>
+        <input [(ngModel)]="estado.codigo" name="codigo" type="number" class="form-control" id="codigo-estado"
+               placeholder="Código">
+      </div>
+    </div>
+  </div>
+</form>
+<app-custom-combo
+  [base]="estado.pais"
+  [nome]="estado.pais.nome"
+  [searchField]="'nome'"
+  [cnome]="'Pais'"
+  [inome]="'pais'"
+></app-custom-combo>
+
+
+<app-table
+  [pojo]="estado"
+  [titles]="['Identificador','Nome', 'Sigla', 'Pais','Código']"
+  [name]="'estado'"
+  [columns]="['id','nome', 'sigla', 'pais.nome','codigo']"
+></app-table>
+
+<div class="modal fade" id="pais">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header text-center">
+        <h4 class="modal-title">País</h4>
+        <button type="button" class="close" (click)="close('pais')">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <app-pais></app-pais>
+      </div>
+      <!-- Modal footer -->
+    </div>
+  </div>
+</div>

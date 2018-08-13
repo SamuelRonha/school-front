@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="form-group">
+      <label for="numero-aluno">Número/Chamada</label>
+      <input [(ngModel)]="aluno.numero" name="nome" type="number"
+             class="form-control" id="numero-aluno"
+             placeholder="133" [required]="true"
+             minlength="3">
+    </div>
+  </div>
+</div>
+<app-pessoa
+  [pessoa]="aluno.pessoa">
+</app-pessoa>
+<app-base-list [bases]="aluno.formacaos" [name]="'formacao'" [titulo]="'Formações'"
+               [type]="'formacaos'"></app-base-list>
+
+<app-table
+  [pojo]="aluno"
+  [titles]="['Identificador','Nome', 'CPF', 'Email','Usuário']"
+  [name]="'aluno'"
+  [columns]="['id','pessoa.nome', 'pessoa.cpf', 'pessoa.email','pessoa.usuario.username']"
+></app-table>
+
+
+
